@@ -1,11 +1,15 @@
-N, M = map(int, input().split())
-arr = list(map(int, input().split()))
-result = 0
-for i in range(N):
-   for j in range(i+1, N):
-       for k in range(j+1, N):
-           if arr[i] + arr[j] + arr[k] > M:
-               continue
-           else:
-               result = max(result, arr[i]+arr[j]+arr[k])
-print(result)
+import sys
+input=sys.stdin.readline
+N, M=map(int, input().split())
+n=list(map(int, input().split()))
+
+from itertools import combinations        
+com_n=list(combinations(n,3))
+check=0
+for c in com_n:
+    if sum(c)==M:
+        check=M
+        break
+    elif sum(c)<M:
+        check=max(check,sum(c))
+print(check)        
