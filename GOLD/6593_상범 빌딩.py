@@ -1,5 +1,5 @@
 from collections import deque
-
+ 
 def bfs(L, R, C, x, y, z):
     dxs = [1, -1, 0, 0, 0, 0]
     dys = [0, 0, 1, -1, 0, 0]
